@@ -1,0 +1,73 @@
+<div class="container">
+<!-- Exercise 4: Use ngModel to dynamically change the value of a instance property -->
+<input
+      type="text"
+      class="title"
+      placeholder="What type of dog is this?"
+      [(ngModel)]="title"
+    />
+    <h1>{{ title }}</h1>
+<!-- Exercise 1: Use property binding to adjust the height and width of an image. -->
+<img
+src="https://www.thesprucepets.com/thmb/-ZHR_fLGpKN6LeWExVDhF2g75Kc=/2472x1854/smart/filters:no_upscale()/pitbull-dog-breeds-4843994-hero-db6922b6c8294b45b19c07aff5865790.jpg"
+alt="pitbull"
+width="{{ width }}"
+height="{{ height }}"
+/>
+<hr>
+<!-- // Exercise 2: Click on a button to log to the console.log a message -->
+<div>
+<button
+(click)= onClick()>
+ Click me to see the dog breed in the console!
+</button>
+<hr>
+</div>
+<!-- NOT COMPLETE - still need to figure out how to clear input between submit
+Exercise 3: Dynamically disable and enable the input field using event binding and property binding. -->
+<div>
+<label for="box">What should we name our new dog? </label>
+<input
+type="text"
+class="form-control mb-3"
+[(ngModel)]="box"
+[disabled]="isDisabled"
+/>
+</div>
+<button
+  class="btn btn-primary"
+  [disabled]= !onOpenBox
+  (click)="onOpenBox()"
+  style="margin-right: 5px;">
+Submit</button>
+<button
+class="btn btn-primary"
+(click)="isDisabled = !isDisabled"
+style="margin-left: 5px;"
+>
+ {{ isDisabled ? "Currenty Disabled" : "Currently Enabled" }}
+</button>
+<hr>
+<!-- Exercise 6: Use ngIf and a instance property to show the element; if the instance property is false, it should not show the element -->
+<p *ngIf="isShow">
+  Show me when isShow is true! Otherwise, don't show me!
+</p>
+<hr>
+<!-- // Exercise 7: Use ngIf and else to dynamically add certain elements to the webpage-->
+<button
+class="btn btn-primary"
+(click)="isShowContent = !isShowContent">
+Click me to reverse the value of isShowContent!</button>
+<p *ngIf="isShowContent === true">
+  If isShowContent is true, show me!</p>
+<p *ngIf="isShowContent === false">
+  Use else to show me!</p>
+  <!-- // Exercise 8: Use ngStyle to change the background color of an element -->
+  <p [ngStyle]="{ backgroundColor: myColor }">
+    This should be green when we implement ngStyle!
+  </p>
+  <!-- // Exercise 10: Use ngFor to output each element of an Array -->
+<p *ngFor="let food of dogFoods; let i = index">
+My dog's favorite foods are {{dogFoods}}
+</p>
+</div>
