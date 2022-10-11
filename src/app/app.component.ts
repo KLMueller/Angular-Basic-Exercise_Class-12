@@ -18,6 +18,7 @@ onClick(){
 }
 // Exercise 3: Dynamically disable and enable the input field using event binding and property binding.
 box = ""
+// Exercise 5: Use event binding for whenever you click the button, you set isDisabled to the opposite of its current value. Example: If isDisabled is true when I click on the button, isDisabled is set to false.
 isDisabled:boolean = false;
 // Exercise 6: Use ngIf and a instance property to show the element; if the instance property is false, it should not show the element
 isShow: boolean = true;
